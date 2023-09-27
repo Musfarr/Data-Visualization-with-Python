@@ -1,0 +1,362 @@
+Chapter 3
+Data and Signals
+Copyright (c) The McGraw-Hill Companies, Inc. Permission required for reproduction or display.
+
+To be transmitted, data must be transformed to electromagnetic signals.
+
+3-1   ANALOG AND DIGITAL
+Data can be analog or digital. The term analog data refers to information that is continuous; digital data refers to information that has discrete states. Analog data take on continuous values. Digital data take on discrete values.
+Topics discussed in this section:
+Analog and Digital Data Analog and Digital Signals Periodic and Nonperiodic Signals
+
+Data can be analog or digital. 
+
+
+
+
+Analog data are continuous and take continuous values.
+Digital data have discrete states and take discrete values.
+
+
+
+
+
+
+ Signals can be analog or digital. Analog signals can have an infinite number of values in a range; digital signals can have only a limited number of values.
+
+
+In data communications, we commonly use periodic analog signals and nonperiodic digital signals.
+
+3-2   PERIODIC ANALOG SIGNALS
+Periodic analog signals can be classified as simple or composite. A simple periodic analog signal, a sine wave, cannot be decomposed into simpler signals. A composite periodic analog signal is composed of multiple sine waves.
+Topics discussed in this section:
+Sine Wave Wavelength Time and Frequency Domain Composite Signals Bandwidth
+The power in your house can be represented by a sine wave with a peak amplitude of 155 to 170 V. However, it is common knowledge that the voltage of the power in U.S. homes is 110 to 120 V. This discrepancy is due to the fact that these are root mean square (rms) values. The signal is squared and then the average amplitude is calculated. The peak value is equal to 21/2   rms value.
+Figure 3.3  Two signals with the same phase and frequency, 
+                        but different amplitudes
+The voltage of a battery is a constant; this constant value can be considered a sine wave, as we will see later. For example, the peak value of an AA battery is normally 1.5 V.
+
+
+
+
+
+
+Frequency and period are the inverse of each other.
+
+  Two signals with the same amplitude and phase,
+                        but different frequencies
+
+Table 3.1  Units of period and frequency
+
+
+Example 3.3
+The power we use at home has a frequency of 60 Hz. The period of this sine wave can be determined as follows:
+
+Example 3.4
+Express a period of 100 ms in microseconds.
+Solution
+From Table 3.1 we find the equivalents of 1 ms (1 ms is 10-3 s) and 1 s (1 s is 106  s). We make the following substitutions:.
+
+Example 3.5
+The period of a signal is 100 ms. What is its frequency in kilohertz?
+Solution
+First we change 100 ms to seconds, and then we calculate the frequency from the period (1 Hz = 10-3 kHz).
+
+Frequency is the rate of change with respect to time. 
+Change in a short span of time means high frequency.
+ 
+Change over a long span of time means low frequency.
+
+If a signal does not change at all, its frequency is zero.
+If a signal changes instantaneously, its frequency is infinite.
+
+
+Phase describes the position of the waveform  relative to time 0.
+
+
+Figure 3.5  Three sine waves with the same amplitude and frequency,                         but different phases
+
+
+ Example 3.6
+
+
+A sine wave is offset 1/6 cycle with respect to time 0. What is its phase in degrees and radians?
+Solution
+We know that 1 complete cycle is 360 . Therefore, 1/6 cycle is
+
+
+Figure 3.6  Wavelength and period
+
+
+Figure 3.7  The time-domain and frequency-domain plots of a sine wave
+
+
+
+
+
+
+
+A complete sine wave in the time domain can be represented by one single spike in the frequency domain.
+
+
+ Example 3.7
+
+
+The frequency domain is more compact and useful when we are dealing with more than one sine wave. For example, Figure 3.8 shows three sine waves, each with different amplitude and frequency. All can be represented by three spikes in the frequency domain.
+Figure 3.8  The time domain and frequency domain of three sine waves
+
+
+
+
+
+
+
+A single-frequency sine wave is not useful in data communications;
+we need to send a composite signal, a signal made of many simple sine waves.
+Figure 3.9  A composite periodic signal
+
+
+Figure 3.10  Decomposition of a composite periodic signal in the time and                           frequency domains
+
+
+
+
+
+
+
+The bandwidth of a composite signal is the difference between the
+highest and the lowest frequencies contained in that signal.
+
+
+Figure 3.12  The bandwidth of periodic and nonperiodic composite signals
+
+
+
+ Example 3.10
+
+
+If a periodic signal is decomposed into five sine waves with frequencies of 100, 300, 500, 700, and 900 Hz, what is its bandwidth? Draw the spectrum, assuming all components have a maximum amplitude of 10 V.
+Solution
+Let fh be the highest frequency, fl the lowest frequency, and B the bandwidth. Then
+
+The spectrum has only five spikes, at 100, 300, 500, 700, and 900 Hz (see Figure 3.13).
+Figure 3.13  The bandwidth for Example 3.10
+
+
+
+ Example 3.11
+
+
+A periodic signal has a bandwidth of 20 Hz. The highest frequency is 60 Hz. What is the lowest frequency? Draw the spectrum if the signal contains all frequencies of the same amplitude.
+Solution
+Let fh be the highest frequency, fl the lowest frequency, and B the bandwidth. Then
+
+The spectrum contains all integer frequencies. We show this by a series of spikes (see Figure 3.14).
+
+Figure 3.14  The bandwidth for Example 3.11
+
+
+
+ Example 3.12
+
+
+A nonperiodic composite signal has a bandwidth of 200 kHz, with a middle frequency of 140 kHz and peak amplitude of 20 V. The two extreme frequencies have an amplitude of 0. Draw the frequency domain of the signal.
+Solution
+The lowest frequency must be at 40 kHz and the highest at 240 kHz. Figure 3.15 shows the frequency domain and the bandwidth.
+
+Figure 3.15  The bandwidth for Example 3.12
+
+
+
+Example 3.13
+An example of a nonperiodic composite signal is the signal propagated by an AM radio station. In the United States, each AM radio station is assigned a 10-kHz bandwidth. The total bandwidth dedicated to AM radio ranges from 530 to 1700 kHz. We will show the rationale behind this 10-kHz bandwidth in Chapter 5.
+Example 3.14
+Another example of a nonperiodic composite signal is the signal propagated by an FM radio station. In the United States, each FM radio station is assigned a 200kHz bandwidth. The total bandwidth dedicated to FM radio ranges from 88 to 108 MHz. We will show the rationale behind this 200-kHz bandwidth in Chapter 5.
+Example 3.15
+Another example of a nonperiodic composite signal is the signal received by an old-fashioned analog blackand-white TV. A TV screen is made up of pixels. If we assume a resolution of 525   700, we have 367,500 pixels per screen. If we scan the screen 30 times per second, this is 367,500   30 = 11,025,000 pixels per second. The worst-case scenario is alternating black and white pixels. We can send 2 pixels per cycle. Therefore, we need 11,025,000 / 2 = 5,512,500 cycles per second, or Hz. The bandwidth needed is 5.5125 MHz. 
+
+3-3   DIGITAL SIGNALS
+In addition to being represented by an analog signal, information can also be represented by a digital signal. For example, a 1 can be encoded as a positive voltage and a 0 as zero voltage. A digital signal can have more than two levels. In this case, we can send more than 1 bit for each level.
+Topics discussed in this section:
+Bit Rate Bit Length Digital Signal as a Composite Analog Signal Application Layer
+
+Figure 3.16  Two digital signals: one with two signal levels and the other                           with four signal levels
+
+
+Example 3.16
+A digital signal has eight levels. How many bits are needed per level? We calculate the number of bits from the formula
+
+Each signal level is represented by 3 bits.
+
+Example 3.17
+A digital signal has nine levels. How many bits are needed per level? We calculate the number of bits by using the formula. Each signal level is represented by 3.17 bits. However, this answer is not realistic. The number of bits sent per level needs to be an integer as well as a power of 2. For this example, 4 bits can represent one level.
+Example 3.18
+Assume we need to download text documents at the rate of 100 pages per minute. What is the required bit rate of the channel?
+Solution
+A page is an average of 24 lines with 80 characters in each line. If we assume that one character requires 8 bits, the bit rate is
+
+Example 3.19
+A digitized voice channel, as we will see in Chapter 4, is made by digitizing a 4-kHz bandwidth analog voice signal. We need to sample the signal at twice the highest frequency (two samples per hertz). We assume that each sample requires 8 bits. What is the required bit rate?
+Solution
+The bit rate can be calculated as
+
+Example 3.20
+What is the bit rate for high-definition TV (HDTV)?
+Solution
+HDTV uses digital signals to broadcast high quality video signals. The HDTV screen is normally a ratio of 16 : 9. There are 1920 by 1080 pixels per screen, and the screen is renewed 30 times per second. Twenty-four bits represents one color pixel. 
+
+The TV stations reduce this rate to 20 to 40 Mbps through compression. 
+
+
+
+Table 3.2  Bandwidth requirements
+
+
+The bit rate and the bandwidth are proportional to each other.
+
+3-4   TRANSMISSION IMPAIRMENT
+Signals travel through transmission media, which are not perfect. The imperfection causes signal impairment. This means that the signal at the beginning of the medium is not the same as the signal at the end of the medium. What is sent is not what is received. Three causes of impairment are attenuation, distortion, and noise.
+Topics discussed in this section:
+Attenuation Distortion Noise
+
+
+Figure 3.25  Causes of impairment
+
+
+Figure 3.26  Attenuation
+
+
+Example 3.26
+Suppose a signal travels through a transmission medium and its power is reduced to one-half. This means that P2 is (1/2)P1. In this case, the attenuation (loss of power) can be calculated as
+
+A loss of 3 dB (-3 dB) is equivalent to losing one-half the power.
+
+Example 3.27
+A signal travels through an amplifier, and its power is increased 10 times. This means that P2 = 10P1 . In this case, the amplification (gain of power) can be calculated as
+
+Example 3.28
+One reason that engineers use the decibel to measure the changes in the strength of a signal is that decibel numbers can be added (or subtracted) when we are measuring several points (cascading) instead of just two. In Figure 3.27 a signal travels from point 1 to point 4. In this case, the decibel value can be calculated as
+Figure 3.27  Decibels for Example 3.28
+
+
+Figure 3.28  Distortion
+
+Figure 3.29  Noise
+
+3-5   DATA RATE LIMITS
+A very important consideration in data communications is how fast we can send data, in bits per second, over a channel. Data rate depends on three factors:
+1. The bandwidth available
+2. The level of the signals we use
+3. The quality of the channel (the level of noise)
+Topics discussed in this section:
+Noiseless Channel: Nyquist Bit Rate Noisy Channel: Shannon Capacity Using Both Limits
+
+Channel Capacity
+? The max rate at which data casn be transmitted over a given communication path or channel under given condition is referred to as channel capacity.
+Nyquist Bandwidth
+? Bandwidth of B, the highest signal rate can be carried is 2B.
+? If signals are binary (two voltage levels) then data rate can be BHz is 2B bps.
+? For given bandwidth, the data rate can be increased by increasing the no. of different signal elements.
+? C (bit rate)  = 2B log2 L
+
+
+
+
+
+Increasing the levels of a signal may reduce the reliability of the system.
+
+
+Example 3.34
+Consider a noiseless channel with a bandwidth of 3000 Hz transmitting a signal with two signal levels. The maximum bit rate can be calculated as
+
+Example 3.35
+Consider the same noiseless channel transmitting a signal with four signal levels (for each level, we send 2 bits). The maximum bit rate can be calculated as
+
+Example 3.36
+We need to send 265 kbps over a noiseless channel with a bandwidth of 20 kHz. How many signal levels do we need?
+Solution
+We can use the Nyquist formula as shown:
+
+Since this result is not a power of 2, we need to either increase the number of levels or reduce the bit rate. If we have 128 levels, the bit rate is 280 kbps. If we have 64 levels, the bit rate is 240 kbps.
+
+Signal to Noise Ratio (SNR)
+? Is the ratio of the power in a signal to power contained in a noise that is present at a particular point in the transmission medium.
+? (SNR)db = 10 log (Signal power / Noise Power)
+? (SNR)db = 10 log (SNR)
+? Higher SNR will mean a high quality and low number of required intermediate repeaters.
+Shannon Capacity Formula
+? Capacity = bandwidth * log2 (1+SNR)
+? C = B log2 (1 + SNR)
+? For a given level of noise, data rate could be increased by increasing either signal strength or bandwidth.
+Example 3.37
+Consider an extremely noisy channel in which the value of the signal-to-noise ratio is almost zero. In other words, the noise is so strong that the signal is faint. For this channel the capacity C is calculated as
+
+This means that the capacity of this channel is zero regardless of the bandwidth. In other words, we cannot receive any data through this channel.
+
+Example 3.38
+We can calculate the theoretical highest bit rate of a regular telephone line. A telephone line normally has a bandwidth of 3000. The signal-to-noise ratio is usually 3162. For this channel the capacity is calculated as
+
+This means that the highest bit rate for a telephone line is 34.860 kbps. If we want to send data faster than this, we can either increase the bandwidth of the line or improve the signal-to-noise ratio.
+Example 3.39
+The signal-to-noise ratio is often given in decibels. Assume that SNRdB = 36 and the channel bandwidth is 2 MHz. The theoretical channel capacity can be calculated as
+
+Example 3.40
+For practical purposes, when the SNR is very high, we can assume that SNR + 1 is almost the same as SNR. In these cases, the theoretical channel capacity can be simplified to
+
+For example, we can calculate the theoretical capacity of the previous example as
+
+Example 3.41
+We have a channel with a 1-MHz bandwidth. The SNR for this channel is 63. What are the appropriate bit rate and signal level?
+Solution
+First, we use the Shannon formula to find the upper limit.
+
+
+
+ Example 3.41 (continued)
+
+
+The Shannon formula gives us 6 Mbps, the upper limit. For better performance we choose something lower, 4 Mbps, for example. Then we use the Nyquist formula to find the number of signal levels.
+
+
+
+
+
+
+  The Shannon capacity gives us the upper limit; the Nyquist formula tells us how many signal levels we need.
+
+One important issue in networking is the performance of the network-how good is it? We discuss quality of service, an overall measurement of network performance, in greater detail in Chapter 24. In this section, we introduce terms that we need for future chapters.
+Topics discussed in this section:
+Bandwidth Throughput Latency (Delay) Bandwidth-Delay Product
+Note
+
+
+
+
+            In networking, we use the term bandwidth in two contexts. ? The first, bandwidth in hertz, refers to       the range of frequencies in a       composite signal or the range of       frequencies that a channel can pass.
+? The second, bandwidth in bits per        second, refers to the speed of bit        transmission in a channel or link.
+
+Example 3.42
+The bandwidth of a subscriber line is 4 kHz for voice or data. The bandwidth of this line for data transmission can be up to 56,000 bps using a sophisticated modem to change the digital signal to analog.
+
+Example 3.43
+If the telephone company improves the quality of the line and increases the bandwidth to 8 kHz, we can send 112,000 bps by using the same technology as mentioned in Example 3.42.
+
+Example 3.44
+A network with bandwidth of 10 Mbps can pass only an average of 12,000 frames per minute with each frame carrying an average of 10,000 bits. What is the throughput of this network?
+Solution
+We can calculate the throughput as
+
+The throughput is almost one-fifth of the bandwidth in this case.
+Example 3.45
+What is the propagation time if the distance between the two points is 12,000 km? Assume the propagation speed to be 2.4   108 m/s in cable.
+Solution
+We can calculate the propagation time as
+
+The example shows that a bit can go over the Atlantic Ocean in only 50 ms if there is a direct cable between the source and the destination.
+Example 3.46
+What are the propagation time and the transmission time for a 2.5-kbyte message (an e-mail) if the bandwidth of the network is 1 Gbps? Assume that the distance between the sender and the receiver is 12,000 km and that light travels at 2.4   108 m/s.
+Solution
+We can calculate the propagation and transmission time as shown on the next slide:
+Example 3.46 (continued)
+
+
